@@ -4,7 +4,7 @@
 #
 Name     : R-randtests
 Version  : 1.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/randtests_1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/randtests_1.0.tar.gz
 Summary  : Testing randomness in R
@@ -23,10 +23,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551141185
+export SOURCE_DATE_EPOCH=1552783726
 
 %install
-export SOURCE_DATE_EPOCH=1551141185
+export SOURCE_DATE_EPOCH=1552783726
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library randtests|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  randtests || :
 
 
 %files
